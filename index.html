@@ -2,34 +2,81 @@
 <head>
 <title>TestPage</title>
 <style>
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto;
-  padding: 10px;
+* {
+  box-sizing: border-box;
 }
-.grid-item {
-  border: 1px;
-  padding: 20px;
-  font-size: 30px;
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.footer {
+  background-color: #0099cc;
+  color: #ffffff;
   text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
 }
 </style>
 </head>
 <body>
-<h1 align="center">Welcome</h1>
-
-<div class="grid-container">
-	<div class="grid-item">
-		<img src="sumukh_pic.jpg" height="500">
-	</div>
-	<div class="grid-item">
-		<p>Name : <b>Sumukh Kesarla</b> </p>
-		<p>Intro : Hi All !! My name is Sumukh. I am a CSE student with keen interest in Web-Designing<br>
-		To view more : <a href="page1.html">Click Here</a>
-		</p>
-	</div>
+<div class="header">
+  <h1 align="center">Welcome</h1>
 </div>
 
+<div class="row">
+  <div class="col-4">
+<img src="sumukh_pic.jpg" width="100%">
+  </div>
+
+<div class="col-8">
+    <h1>Sumukh Kesarla</h1>
+    <p>Intro : Hi All !! My name is Sumukh. I am a CSE student with keen interest in Web-Designing<br>
+		To view more : <a href="page1.html">Click Here</a>
+		</p>
+  </div>
+</div>
+<div class="footer">
+  <p>Resize the browser window to see how the content respond to the resizing.</p>
+</div>
 
 </body>
 </html>
